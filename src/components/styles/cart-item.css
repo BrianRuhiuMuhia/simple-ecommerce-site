@@ -1,0 +1,26 @@
+.cart-item-img{
+    width:100px;
+    height: 100px;
+}
+.remove-btn{
+    background-color: red;
+    width:120px;
+  height:30px;
+  border-radius: 10px;
+  border:none;
+  color:black;
+}
+.remove-btn:hover{
+    transform:scale(1.1)
+}
+.cart-item{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    margin-left:1em;
+}
+.cart-item-content{
+    display:flex;
+    flex-direction:column;
+    gap:0.5em;
+}

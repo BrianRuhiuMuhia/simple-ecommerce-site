@@ -1,0 +1,37 @@
+.nav-bar{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+    gap:2em;
+    width:80%;
+}
+.nav-bar_links{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.nav-bar_links-content{
+    display:flex;
+    align-items:center ;
+}
+
+.nav-bar_links-content-btns{
+    cursor:pointer;
+    position: relative;
+   
+}
+.nav-bar-btns{
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+    border-radius: 10px;
+  border:none;
+  padding:0.5em;
+  
+}
+.nav-bar-btns:hover{
+    background-color: rgb(190, 187, 187);
+}

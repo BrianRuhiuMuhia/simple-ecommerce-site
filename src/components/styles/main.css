@@ -1,0 +1,15 @@
+.cards{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:auto;
+    background-color:white;
+  gap:1em;
+  cursor:pointer;
+ 
+}
+.main{
+  display:grid;
+  grid-template-columns: repeat(1,1fr);
+  grid-row: auto;
+  gap:2em;
+}

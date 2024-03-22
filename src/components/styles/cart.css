@@ -1,0 +1,14 @@
+.cart{
+    display:flex;
+    flex-direction: column;
+    width:50vw;
+    height:100vh;
+    position:absolute;
+    top:100%;
+    right:50%;
+    z-index:100;
+    overflow-y: scroll;
+    background-color: whitesmoke;
+    gap:0.5em;
+    
+}
