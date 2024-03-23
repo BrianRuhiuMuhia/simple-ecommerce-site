@@ -18,6 +18,10 @@ return (<div className="cart">
 <div>
     {items}
 </div>
-Total:{items.length>0? total:0}
+{items.length>0? <div>
+    <span>Total:{total}</span>
+    <button>Submit</button>
+</div>:""}
+
 </div>)
 }
