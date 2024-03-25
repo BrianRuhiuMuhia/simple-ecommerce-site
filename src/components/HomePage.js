@@ -1,7 +1,6 @@
 import Navbar from "./Navbar.js";
 import Main from "./Main.js";
 import Card from "./Card"
-// import getData from "./ApiCall"
 import {useState,useEffect} from "react"
 import "./styles/homepage.css"
 export default function HomePage()
@@ -16,7 +15,6 @@ return data
 }
 
     const [cart,setCartItems]=useState([])
-    
     let cards=[]
     const [data,setData]=useState([])
 useEffect(()=>{
@@ -34,6 +32,15 @@ else{
     <div className="page-loader">
       <div className="spinner"></div></div>
     )
+}
+let cartData=JSON.parse(localStorage.getItem("cart"))
+if(cart.length>0)
+{
+    localStorage.setItem("cart",JSON.stringify(cart))
+}
+else if(Array.isArray(cartData) && cart.length<=0 && cartData.length>0)
+{
+    setCartItems(cartData)
 }
     return(
         <div className="home-page">

@@ -1,6 +1,5 @@
 import SimpleImageSlider from "react-simple-image-slider";
 import {useState} from 'react'
-import getData from "./ApiCall";
 export default function ImageSlider(props)
 {
   const [images,setImages]=useState([])
