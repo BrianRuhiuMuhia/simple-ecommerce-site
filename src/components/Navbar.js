@@ -13,6 +13,12 @@ const [isActiveHelp,setIsActiveHelp]=useState(false)
 const [isCartActive,setIsCartActive]=useState(false)
     return <nav className="nav-bar">
         <h2 className="nav-bar_header">FiloMart</h2>
+        <div className="search-bar">
+            <input onChange={(event)=>{
+                props.setSearch(event.target.value)
+            }}></input>
+            <button>Search</button>
+        </div>
         <div className="nav-bar_links">
         <div className="nav-bar_links-content">
         <IoPersonCircle size="30" />

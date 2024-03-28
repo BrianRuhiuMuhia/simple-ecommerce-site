@@ -17,6 +17,7 @@ return data
     const [cart,setCartItems]=useState([])
     let cards=[]
     const [data,setData]=useState([])
+    const [search,setSearch]=useState("")
 useEffect(()=>{
         fetchData().then((result)=>{
             setData(result)
@@ -24,7 +25,9 @@ useEffect(()=>{
 },[])
 if(Array.isArray(data))
 {
-  cards=data.map((item)=>{
+  cards=data.filter((item)=>{
+return item["title"].toLowerCase().includes(search.toLowerCase())
+  }).map((item)=>{
     return <Card key={item["id"]} id={item['id']} item={item} cart={cart} setCartItems={setCartItems}/>})
 }
 else{
@@ -41,12 +44,10 @@ if(cartData!=null)
     setCartItems(cartData)
 } 
 }
-
-
     return(
         <div className="home-page">
-            <Navbar cart={cart} setCartItems={setCartItems} setData={setData} data={data}/>
-            <Main cards={cards} data={data} />
+            <Navbar cart={cart} setCartItems={setCartItems} setData={setData} data={data} setSearch={setSearch}/>
+            <Main cards={cards} data={data} search={search} />
         </div>
     )
 }
