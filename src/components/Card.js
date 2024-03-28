@@ -1,6 +1,7 @@
 import "./styles/card.css"
 export default function Card(props)
 {
+    
     return (<div className="card">
         <img src={props.item['image']} className="card-image"></img>
         <div className="card-content">
@@ -15,7 +16,27 @@ export default function Card(props)
                     return prev
                 }
 return [...prev,props.item]
-            })
+            }
+            )
+            const localData=JSON.parse(localStorage.getItem("cart"))
+            if(Array.isArray(localData) && localData.length>0)
+            {
+                let isPresent=false
+                for(let item of localData)
+                {
+                    if(item["id"]===props.id)
+                    isPresent=true
+                }
+                if(!isPresent)
+                {
+                  const newLocalData=[...localData,props.item]
+                localStorage.setItem("cart",JSON.stringify(newLocalData))  
+                }
+                
+            }
+            else{
+                localStorage.setItem("cart",JSON.stringify([props.item]))
+            }
         }}>Add To Cart</button>
         </div>
     </div>)

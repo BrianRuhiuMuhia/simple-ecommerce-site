@@ -34,14 +34,11 @@ else{
     )
 }
 let cartData=JSON.parse(localStorage.getItem("cart"))
-if(cart.length>0)
-{
-    localStorage.setItem("cart",JSON.stringify(cart))
-}
-else if(Array.isArray(cartData) && cart.length<=0 && cartData.length>0)
+if(cartData.length>0 && cart.length<=0)
 {
     setCartItems(cartData)
 }
+
     return(
         <div className="home-page">
             <Navbar cart={cart} setCartItems={setCartItems} setData={setData} data={data}/>
