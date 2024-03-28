@@ -34,10 +34,14 @@ else{
     )
 }
 let cartData=JSON.parse(localStorage.getItem("cart"))
-if(cartData.length>0 && cart.length<=0)
+if(cartData!=null)
+{
+   if(cartData.length>0 && cart.length<=0)
 {
     setCartItems(cartData)
+} 
 }
+
 
     return(
         <div className="home-page">
