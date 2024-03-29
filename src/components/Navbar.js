@@ -16,8 +16,7 @@ const [isCartActive,setIsCartActive]=useState(false)
         <div className="search-bar">
             <input onChange={(event)=>{
                 props.setSearch(event.target.value)
-            }}></input>
-            <button>Search</button>
+            }} placeholder="search item" value={props.search}></input>
         </div>
         <div className="nav-bar_links">
         <div className="nav-bar_links-content">

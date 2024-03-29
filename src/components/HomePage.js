@@ -3,6 +3,7 @@ import Main from "./Main.js";
 import Card from "./Card"
 import {useState,useEffect} from "react"
 import "./styles/homepage.css"
+
 export default function HomePage()
 {
 const url="https://fakestoreapi.com/products/"
@@ -21,6 +22,7 @@ return data
 useEffect(()=>{
         fetchData().then((result)=>{
             setData(result)
+            localStorage.setItem("data",JSON.stringify(result))
         })
 },[])
 if(Array.isArray(data))
@@ -28,7 +30,7 @@ if(Array.isArray(data))
   cards=data.filter((item)=>{
 return item["title"].toLowerCase().includes(search.toLowerCase())
   }).map((item)=>{
-    return <Card key={item["id"]} id={item['id']} item={item} cart={cart} setCartItems={setCartItems}/>})
+    return <Card id={item['id']} item={item} cart={cart} setCartItems={setCartItems} key={item["id"]} />})
 }
 else{
     return (
@@ -46,7 +48,7 @@ if(cartData!=null)
 }
     return(
         <div className="home-page">
-            <Navbar cart={cart} setCartItems={setCartItems} setData={setData} data={data} setSearch={setSearch}/>
+            <Navbar cart={cart} setCartItems={setCartItems} setData={setData} data={data} setSearch={setSearch} search={search}/>
             <Main cards={cards} data={data} search={search} />
         </div>
     )
